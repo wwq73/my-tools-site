@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { 
   Sparkles, 
   Scroll, 
@@ -13,16 +12,6 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { apiGet, apiPost } from '../../api';
-
-interface StickData {
-  number: number;
-  level: string;
-  palace: string;
-  poem: string;
-  interpretation: string;
-  meaning: string;
-  story: string;
-}
 
 interface DrawResponse {
   stick_number: number;
@@ -78,7 +67,6 @@ const SHAKE_Y_VALUES = [12, 18, 25, 15, 22, 30, 10];
 const SHAKE_ROTATE_VALUES = [10, -15, 20, -12, 18, -25, 8];
 
 export default function DailyStick() {
-  const navigate = useNavigate();
   const [isDrawing, setIsDrawing] = useState(false);
   const [result, setResult] = useState<DrawResponse | null>(null);
   const [hasDrawn, setHasDrawn] = useState(false);
@@ -485,30 +473,6 @@ export default function DailyStick() {
         </AnimatePresence>
 
         {/* 签文浏览区（底部） */}
-        <div className="mt-12 pt-8 border-t dark:border-gray-700">
-          <h3 className="text-lg font-bold text-center mb-6 text-gray-700 dark:text-gray-200">
-            灵签图鉴
-          </h3>
-          <div className="grid grid-cols-5 sm:grid-cols-10 gap-2">
-            {[...Array(100)].map((_, i) => {
-              const num = i + 1;
-              const isDrawn = result?.stick_number === num;
-              return (
-                <button
-                  key={num}
-                  onClick={() => navigate(`/fortune/stick/${num}`)}
-                  className={`aspect-square rounded-lg flex items-center justify-center text-sm font-bold transition-colors ${
-                    isDrawn
-                      ? 'bg-red-500 text-white shadow-lg'
-                      : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20'
-                  }`}
-                >
-                  {num}
-                </button>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </div>
   );
