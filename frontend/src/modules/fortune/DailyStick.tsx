@@ -494,19 +494,17 @@ export default function DailyStick() {
               const num = i + 1;
               const isDrawn = result?.stick_number === num;
               return (
-                <motion.button
+                <button
                   key={num}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
                   onClick={() => navigate(`/fortune/stick/${num}`)}
                   className={`aspect-square rounded-lg flex items-center justify-center text-sm font-bold transition-colors ${
-                    isDrawn 
-                      ? 'bg-red-500 text-white shadow-lg' 
+                    isDrawn
+                      ? 'bg-red-500 text-white shadow-lg'
                       : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20'
                   }`}
                 >
                   {num}
-                </motion.button>
+                </button>
               );
             })}
           </div>
