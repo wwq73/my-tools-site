@@ -9,6 +9,7 @@ import DailyStick from './modules/fortune/DailyStick'
 import StickDetail from './modules/fortune/StickDetail'
 import { DivinationPage } from './modules/divination/DivinationPage'
 import { NamePage } from './modules/naming/NamePage'
+import { PoetryPage } from './modules/poetry/PoetryPage'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/fortune/stick/:number" element={<StickDetail />} />
           <Route path="/divination" element={<DivinationPage />} />
           <Route path="/naming" element={<NamePage />} />
+          <Route path="/poetry" element={<PoetryPage />} />
         </Routes>
       </main>
       <Footer />

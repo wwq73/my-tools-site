@@ -15,6 +15,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 复制代码
 COPY . .
 
+# 解压诗词数据库（构建时解压，启动即用）
+RUN if [ -f poetry.db.gz ]; then \
+        gzip -d poetry.db.gz && echo "诗词数据库解压完成"; \
+    else \
+        echo "无 poetry.db.gz，跳过解压"; \
+    fi
+
 # 暴露端口
 EXPOSE 8000
 
