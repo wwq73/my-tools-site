@@ -6,8 +6,7 @@ services:
   - type: web
     name: mytools-backend
     runtime: docker
-    repo: https://github.com/wwq73/my-tools-site
-    branch: main
+    branch: master
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     envVars:
@@ -31,8 +30,7 @@ services:
   - type: web
     name: mytools-frontend
     runtime: static
-    repo: https://github.com/wwq73/my-tools-site
-    branch: main
+    branch: master
     buildCommand: cd frontend && npm install && npx vite build
     staticPublishPath: ./frontend/dist
     pullRequestPreviewsEnabled: false
