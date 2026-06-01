@@ -1,5 +1,8 @@
 # Render Blueprint - My Tools Site
 # 一键部署配置文件
+#
+# 如需 Redis：在 Render Dashboard 手动创建 Redis 实例，
+# 然后将连接字符串填入后端环境变量 REDIS_URL
 
 services:
   # ========== 后端 API ==========
@@ -13,11 +16,6 @@ services:
       - key: DATABASE_URL
         fromDatabase:
           name: mytools-db
-          property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: mytools-redis
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
@@ -38,14 +36,9 @@ services:
       - key: VITE_API_URL
         value: https://mytools-backend.onrender.com
 
-# ========== 数据库 ==========
+# ========== PostgreSQL ==========
 databases:
   - name: mytools-db
     databaseName: mytools
     user: mytools
-    plan: free
-
-# ========== Redis ==========
-redis:
-  - name: mytools-redis
     plan: free
