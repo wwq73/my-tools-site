@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /d/my-tools-site/my-tools-site/backend/data && ls -la)",
+      "Read(//d/d/my-tools-site/my-tools-site/backend/**)"
+    ]
+  }
+}

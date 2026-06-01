@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Database
+postgres_data/
+redis_data/
+*.db
+*.sqlite
+
+# Python virtual environment
+venv/
+
+# Design mockups
+dream-mockup*.html
+
+# Submodules
+backend/scripts/chinese-poetry
+
+# Build
+frontend/dist/
